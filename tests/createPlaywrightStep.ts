@@ -2,13 +2,10 @@ import { Page } from "@playwright/test";
 import { PageClass } from "../page-objects/page";
 import { TestFunction } from "../step-tests/types";
 
-type PlaywrightTest = <T>(args: { page: Page } & T) => void | Promise<void>;
-
 export const createStep =
-  <P extends PageClass, T extends any[] = []>(pageClass: P) =>
-  <PI extends InstanceType<P>>(
-    callback: TestFunction<PI, T>,
-    ...args: T
-  ): PlaywrightTest =>
-  ({ page }) =>
+  <P extends PageClass>(pageClass: P) =>
+  <T extends any[] = [], PI extends InstanceType<P> = InstanceType<P>>(
+    callback: TestFunction<PI, T>
+  ) =>
+  (page: Page, ...args: T) =>
     callback({ page: new pageClass(page) as PI }, ...args);
