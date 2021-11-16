@@ -1,9 +1,10 @@
 import { CustomPage } from "../page-objects/page";
 
-export type TestParams<P extends CustomPage, T = {}> = {
+export type TestParams<P extends CustomPage> = {
   page: P;
-} & T;
+};
 
-export type TestFunction<P extends CustomPage, T = {}> = (
-  params: TestParams<P, T>
+export type TestFunction<P extends CustomPage, T extends any[] = []> = (
+  params: TestParams<P>,
+  ...args: T
 ) => Promise<void> | void;

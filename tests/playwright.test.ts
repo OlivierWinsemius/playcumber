@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { createStep } from "./createPlaywrightStep";
 import { PlaywrightDevPage } from "../page-objects/playwrightPage";
-import { navigate } from "../step-tests/testText";
+import { navigate } from "../step-tests/example";
 
 const playwrightStep = createStep(PlaywrightDevPage);
 
