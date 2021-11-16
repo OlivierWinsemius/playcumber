@@ -1,8 +1,14 @@
 import { test } from "@playwright/test";
-import { PlaywrightDevPage } from "../page-objects/page";
-import { testText } from "../step-tests/testText";
+import { createStep } from "./createPlaywrightStep";
+import { PlaywrightDevPage } from "../page-objects/playwrightPage";
+import { navigate } from "../step-tests/testText";
 
-test("basic test", async function ({ page }) {
-  const playwrightDevPage = new PlaywrightDevPage(page);
-  await testText({ page: playwrightDevPage });
+const playwrightStep = createStep(PlaywrightDevPage);
+
+const navigateStep = playwrightStep(navigate);
+const testTextStep = playwrightStep(navigate);
+
+test("works", async ({ page }) => {
+  await navigateStep({ page });
+  await testTextStep({ page });
 });

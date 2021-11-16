@@ -1,8 +1,9 @@
-import { When } from "@cucumber/cucumber";
-import { PlaywrightDevPage } from "../page-objects/page";
-import { testText } from "../step-tests/testText";
+import { Then, When } from "@cucumber/cucumber";
+import { PlaywrightDevPage } from "../page-objects/playwrightPage";
+import { createStep } from "./createCucumberStep";
+import { navigate, testText } from "../step-tests/testText";
 
-When("playwright test works", async function () {
-  const playwrightDevPage = new PlaywrightDevPage(this.page);
-  await testText({ page: playwrightDevPage });
-});
+export const playwrightStep = createStep(PlaywrightDevPage);
+
+When("I navigate", playwrightStep(navigate));
+Then("playwright test works", playwrightStep(testText));

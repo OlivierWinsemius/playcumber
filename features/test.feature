@@ -1,3 +1,4 @@
 Feature: Playwright test
     Scenario: Works
-        When playwright test works
+        When I navigate
+        Then playwright test works
