@@ -1,12 +1,15 @@
-import { Page, BrowserContext, expect } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 
 export class CustomPage {
-  page: Page;
-  context: BrowserContext;
+  readonly page: Page;
 
   constructor(page: Page) {
     this.page = page;
-    this.context = page.context();
+  }
+
+  async close() {
+    await this.page.close();
+    await this.page.context().close();
   }
 
   async open(url = "/") {

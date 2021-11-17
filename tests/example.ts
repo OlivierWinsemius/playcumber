@@ -1,10 +1,8 @@
 import { PlaywrightDevPage } from "../page-objects/playwrightPage";
 import { TestFunction } from "./types";
 
-export const navigate: TestFunction<PlaywrightDevPage> = async ({ page }) => {
-  await page.goto();
-};
+export const goToPlaywrightPage: TestFunction<PlaywrightDevPage> = ({ page }) =>
+  page.open();
 
-export const testText: TestFunction<PlaywrightDevPage> = async ({ page }) => {
-  await page.titleHasText("Playwright");
-};
+export const testText: TestFunction<PlaywrightDevPage> = ({ page }) =>
+  page.titleHasText("Playwright");

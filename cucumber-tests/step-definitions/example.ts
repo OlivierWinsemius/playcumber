@@ -1,14 +1,19 @@
 import { Given, Then } from "@cucumber/cucumber";
 
 import { PlaywrightDevPage } from "../../page-objects/playwrightPage";
-import { navigate, testText } from "../../tests/example";
+import { goToPlaywrightPage, testText } from "../../tests/example";
 import { CustomWorld, initializeWorldPage } from "../world";
 
-Given("I navigate to playwright", function (this: CustomWorld) {
-  initializeWorldPage(this, PlaywrightDevPage);
-  return navigate(this);
+type PlaywrightWorld = CustomWorld<PlaywrightDevPage>;
+
+Given("I have a playwright page", function (this: CustomWorld) {
+  return initializeWorldPage(this, PlaywrightDevPage);
 });
 
-Then("playwright test works", function (this: CustomWorld<PlaywrightDevPage>) {
+Given("I navigate to playwright.dev", function (this: PlaywrightWorld) {
+  return goToPlaywrightPage(this);
+});
+
+Then("playwright test works", function (this: PlaywrightWorld) {
   return testText(this);
 });
