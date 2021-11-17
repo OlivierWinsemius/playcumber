@@ -30,9 +30,6 @@ Before(async function (this: CustomWorld): Promise<void> {
 
   const page = await context.newPage();
   this.page = new CustomPage(page);
-
-  this.page.page = page;
-  this.page.context = context;
 });
 
 After(async function (this: CustomWorld, scenario): Promise<void> {
