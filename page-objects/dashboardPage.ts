@@ -9,7 +9,7 @@ export class DashboardPage extends IframePage {
     await this.open(`/dashboard/${url}`);
   }
 
-  async buttonExists(buttonText: string): Promise<void> {
+  async buttonExists(buttonText: string) {
     const text = buttonSelectors[buttonText] ?? buttonText;
     await super.buttonExists(text);
   }

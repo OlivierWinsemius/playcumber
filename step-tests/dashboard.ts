@@ -8,5 +8,5 @@ export const goToDashboardPage: TestFunction<DashboardPage, [string]> = (
 
 export const isButtonVisible: TestFunction<DashboardPage, [string]> = (
   { page },
-  url: string
-) => page.buttonExists(url);
+  text: string
+) => page.buttonExists(text);

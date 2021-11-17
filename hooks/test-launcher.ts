@@ -36,7 +36,6 @@ Before(async function (this: CustomWorld): Promise<void> {
 });
 
 After(async function (this: CustomWorld, scenario): Promise<void> {
-  // await new Promise((res) => setTimeout(res, 10000));
   await this.page.page.close();
   await this.page.context.close();
 

@@ -1,4 +1,4 @@
-import { Page, BrowserContext } from "@playwright/test";
+import { Page, BrowserContext, expect } from "@playwright/test";
 
 export class CustomPage {
   page: Page;
@@ -15,8 +15,12 @@ export class CustomPage {
     });
   }
 
-  async buttonExists(text: string): Promise<void> {
-    await this.page.isVisible(`button >> text="${text}")`);
+  async buttonExists(text: string) {
+    const button = await this.page.textContent(
+      `//button[contains(., "${text}")]`
+    );
+
+    expect(button).not.toBeNull();
   }
 }
 

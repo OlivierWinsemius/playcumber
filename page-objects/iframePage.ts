@@ -2,10 +2,7 @@ import { CustomPage } from "./page";
 
 export class IframePage extends CustomPage {
   async waitSimLoaderHidden() {
-    await this.page.waitForSelector(".simplicate_loader", {
-      state: "hidden",
-      timeout: 30000,
-    });
+    await this.page.waitForSelector(".simplicate_loader", { state: "hidden" });
   }
 
   async open(url: string) {
