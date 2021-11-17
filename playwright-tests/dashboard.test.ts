@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 import { DashboardPage } from "../page-objects/dashboardPage";
-import { goToDashboardPage, isButtonVisible } from "../step-tests/dashboard";
+import { goToDashboardPage, isButtonVisible } from "../tests/dashboard";
 
 test("dashboard", async ({ page }) => {
   const dashboardPage = new DashboardPage(page);

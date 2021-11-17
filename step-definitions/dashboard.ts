@@ -1,8 +1,9 @@
 import { Given, Then } from "@cucumber/cucumber";
-import { initPage } from "../hooks/initPage";
+
 import { DashboardPage } from "../page-objects/dashboardPage";
-import { goToDashboardPage, isButtonVisible } from "../step-tests/dashboard";
-import { CustomWorld } from "../world/world";
+import { goToDashboardPage, isButtonVisible } from "../tests/dashboard";
+import { initPage } from "../utils/initPage";
+import { CustomWorld } from "../utils/world";
 
 Given(
   /^I go to page '\/dashboard\/(.*)'$/,

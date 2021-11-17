@@ -1,5 +1,5 @@
 import { CustomPageClass } from "../page-objects/page";
-import { CustomWorld } from "../world/world";
+import { CustomWorld } from "./world";
 
 export function initPage<C extends CustomPageClass, CI extends InstanceType<C>>(
   t: CustomWorld,

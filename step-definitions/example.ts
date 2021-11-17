@@ -1,10 +1,9 @@
 import { Given, Then } from "@cucumber/cucumber";
 
-import { CustomWorld } from "../world/world";
+import { CustomWorld } from "../utils/world";
 import { PlaywrightDevPage } from "../page-objects/playwrightPage";
-
-import { navigate, testText } from "../step-tests/example";
-import { initPage } from "../hooks/initPage";
+import { navigate, testText } from "../tests/example";
+import { initPage } from "../utils/initPage";
 
 Given("I navigate to playwright", function (this: CustomWorld) {
   initPage(this, PlaywrightDevPage);
