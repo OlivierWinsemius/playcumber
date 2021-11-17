@@ -3,5 +3,5 @@ Feature: Playwright test
         Given I have a playwright page
 
     Scenario: Works
-        Given I navigate to playwright.dev
+        Given I am on playwright.dev
         Then playwright test works

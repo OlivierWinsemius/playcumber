@@ -6,20 +6,14 @@ import { CustomWorld } from "../world";
 
 type DashboardWorld = CustomWorld<DashboardPage>;
 
-Given("I have a dashboard page", function (this: CustomWorld) {
+Given<CustomWorld>("I have a dashboard page", function () {
   return initWorld(this, DashboardPage);
 });
 
-Given(
-  /^I navigate to '\/dashboard\/(.*)'$/,
-  function (this: DashboardWorld, url: string) {
-    return this.page.open(url);
-  }
-);
+Given<DashboardWorld>(/^I am on '\/dashboard\/(.*)'$/, function (url: string) {
+  return this.page.open(url);
+});
 
-Then(
-  /^I should see button '(.*)'$/,
-  function (this: DashboardWorld, text: string) {
-    return this.page.buttonExists(text);
-  }
-);
+Then<DashboardWorld>(/^I should see button '(.*)'$/, function (text: string) {
+  return this.page.buttonExists(text);
+});
