@@ -1,7 +1,16 @@
-import { CustomPage } from "./page";
+import { IframePage } from "./iframePage";
 
-export class DashboardPage extends CustomPage {
-  async goto(url: string) {
-    await this.page.goto("https://www.google.com");
+const buttonSelectors: Record<string, string> = {
+  "Nieuwe workflow": "label_add_tasks",
+};
+
+export class DashboardPage extends IframePage {
+  async openDashboard(url: string) {
+    await this.open(`/dashboard/${url}`);
+  }
+
+  async buttonExists(buttonText: string): Promise<void> {
+    const text = buttonSelectors[buttonText] ?? buttonText;
+    await super.buttonExists(text);
   }
 }

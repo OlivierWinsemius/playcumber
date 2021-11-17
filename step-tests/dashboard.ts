@@ -1,9 +1,12 @@
 import { DashboardPage } from "../page-objects/dashboardPage";
-import { TestParams } from "./types";
+import { TestFunction } from "./types";
 
-export async function goToDashboardPage(
-  { page }: TestParams<DashboardPage>,
+export const goToDashboardPage: TestFunction<DashboardPage, [string]> = (
+  { page },
   url: string
-) {
-  await page.goto(url);
-}
+) => page.openDashboard(url);
+
+export const isButtonVisible: TestFunction<DashboardPage, [string]> = (
+  { page },
+  url: string
+) => page.buttonExists(url);

@@ -15,7 +15,7 @@
   "scripts": {
     "cucumber": "cucumber-js features",
     "test:playwright": "npx playwright test",
-    "test:cucumber": "yarn cucumber"
+    "test:cucumber": "yarn cucumber --profile=reporting"
   },
   "engines": {
     "node": "17.0.1"
