@@ -5,8 +5,8 @@ const buttonSelectors: Record<string, string> = {
 };
 
 export class DashboardPage extends IframePage {
-  async openDashboard(url: string) {
-    await this.open(`/dashboard/${url}`);
+  async open(url: string) {
+    await super.open(`/dashboard/${url}`);
   }
 
   async buttonExists(buttonText: string) {

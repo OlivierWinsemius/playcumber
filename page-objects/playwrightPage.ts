@@ -2,8 +2,8 @@ import { expect } from "@playwright/test";
 import { CustomPage } from "./page";
 
 export class PlaywrightDevPage extends CustomPage {
-  async open(url = "/") {
-    await this.page.goto(`https://playwright.dev${url}`);
+  async open() {
+    await this.page.goto("https://playwright.dev");
   }
 
   async titleHasText(text: string) {
