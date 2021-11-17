@@ -7,8 +7,8 @@ import {
   Status,
 } from "@cucumber/cucumber";
 import { chromium, Browser } from "@playwright/test";
-import { CustomPage } from "../page-objects/page";
-import { CustomWorld } from "../utils/world";
+import { CustomPage } from "../../page-objects/page";
+import { CustomWorld } from "../world";
 
 let browser: Browser;
 

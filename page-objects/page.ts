@@ -10,9 +10,7 @@ export class CustomPage {
   }
 
   async open(url = "/") {
-    await this.page.goto(`http://127.0.0.1${url}`, {
-      waitUntil: "networkidle",
-    });
+    await this.page.goto(`http://127.0.0.1${url}`);
   }
 
   async buttonExists(text: string) {

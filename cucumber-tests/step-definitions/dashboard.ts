@@ -1,14 +1,13 @@
 import { Given, Then } from "@cucumber/cucumber";
 
-import { DashboardPage } from "../page-objects/dashboardPage";
-import { goToDashboardPage, isButtonVisible } from "../tests/dashboard";
-import { initPage } from "../utils/initPage";
-import { CustomWorld } from "../utils/world";
+import { DashboardPage } from "../../page-objects/dashboardPage";
+import { goToDashboardPage, isButtonVisible } from "../../tests/dashboard";
+import { CustomWorld, initializeWorldPage } from "../world";
 
 Given(
   /^I go to page '\/dashboard\/(.*)'$/,
   async function (this: CustomWorld, url: string) {
-    initPage(this, DashboardPage);
+    initializeWorldPage(this, DashboardPage);
     return goToDashboardPage(this, url);
   }
 );

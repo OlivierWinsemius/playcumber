@@ -1,7 +1,7 @@
 const feature = [
     "--require-module ts-node/register",
-    "--require step-definitions/**/*.ts",
-    "--require hooks/**/*.ts",
+    "--require cucumber-tests/step-definitions/**/*.ts",
+    "--require cucumber-tests/hooks/**/*.ts",
     "--publish-quiet",
     "--tags 'not @ignore'",
 ];
