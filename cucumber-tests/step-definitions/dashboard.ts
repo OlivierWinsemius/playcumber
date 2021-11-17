@@ -6,11 +6,8 @@ import { CustomWorld } from "../world";
 
 type DashboardWorld = CustomWorld<DashboardPage>;
 
-Given<CustomWorld>("I have a dashboard page", function () {
-  return initWorld(this, DashboardPage);
-});
-
-Given<DashboardWorld>(/^I am on '\/dashboard\/(.*)'$/, function (url: string) {
+Given<CustomWorld>(/^I am on '\/dashboard\/(.*)'$/, function (url: string) {
+  initWorld(this, DashboardPage);
   return this.page.open(url);
 });
 

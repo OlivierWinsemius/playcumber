@@ -6,11 +6,8 @@ import { CustomWorld } from "../world";
 
 type PlaywrightWorld = CustomWorld<PlaywrightDevPage>;
 
-Given<CustomWorld>("I have a playwright page", function () {
-  return initWorld(this, PlaywrightDevPage);
-});
-
-Given<PlaywrightWorld>("I am on playwright.dev", function () {
+Given<CustomWorld>("I am on playwright.dev", function () {
+  initWorld(this, PlaywrightDevPage);
   return this.page.open();
 });
 
