@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import { CustomPage } from "./page";
+import { CustomPage } from "./customPage";
 
 export class PlaywrightDevPage extends CustomPage {
   async open() {

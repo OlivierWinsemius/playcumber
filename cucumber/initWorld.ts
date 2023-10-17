@@ -1,4 +1,4 @@
-import { CustomPageClass } from "../page-objects/page";
+import { CustomPageClass } from "../page-objects/customPage";
 import { CustomWorld } from "./world";
 
 export function initWorld<

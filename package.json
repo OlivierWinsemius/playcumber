@@ -13,9 +13,10 @@
     "typescript": "^4.4.4"
   },
   "scripts": {
+    "postinstall": "pnpm exec playwright install",
     "cucumber": "cucumber-js features",
     "test:playwright": "npx playwright test",
-    "test:cucumber": "yarn cucumber --profile=reporting"
+    "test:cucumber": "pnpm run cucumber --profile=reporting"
   },
   "engines": {
     "node": "17.0.1"

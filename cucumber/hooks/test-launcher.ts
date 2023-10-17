@@ -1,6 +1,6 @@
 import { Before, BeforeAll, AfterAll, After, Status } from "@cucumber/cucumber";
 import { chromium, Browser } from "@playwright/test";
-import { CustomPage } from "../../page-objects/page";
+import { CustomPage } from "../../page-objects/custumPage";
 import { CustomWorld } from "../world";
 
 let browser: Browser;
@@ -12,7 +12,7 @@ BeforeAll(async function () {
 Before(async function (this: CustomWorld) {
   const context = await browser.newContext({
     viewport: { width: 600, height: 600 },
-    storageState: ".state.json.cache",
+    storageState: "state.json",
   });
 
   const page = await context.newPage();
