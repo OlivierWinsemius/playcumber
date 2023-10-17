@@ -8,6 +8,9 @@
   "devDependencies": {
     "@cucumber/cucumber": "10.0.0",
     "@playwright/test": "1.39.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "8.51.0",
     "tsx": "3.13.0",
     "typescript": "5.2.2"
   },
@@ -15,6 +18,7 @@
     "postinstall": "pnpm exec playwright install",
     "test": "cucumber-js",
     "test:playwright": "npx playwright test",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint": "eslint **/*.ts"
   }
 }

@@ -8,7 +8,7 @@ Given("I am on playwright.dev", function () {
   return this.page.open();
 });
 
-Then("I have {int} cucumbers in my belly", function (cucumberCount) {
+Then("I have {int} cucumbers in my belly", function () {
   assertPage(this, PlaywrightPage);
   return this.page.titleHasText("Playwright");
 });
