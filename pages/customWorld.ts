@@ -1,7 +1,9 @@
 import { World, IWorldOptions } from "@cucumber/cucumber";
-import { CustomPage } from "../page-objects/customPage";
+import CustomPage from "./customPage";
 
-export class CustomWorld<P extends CustomPage = CustomPage> extends World {
+export default class CustomWorld<
+  P extends CustomPage = CustomPage
+> extends World {
   page: P;
 
   constructor(options: IWorldOptions, page: P) {

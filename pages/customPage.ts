@@ -1,6 +1,6 @@
 import { Page, expect } from "@playwright/test";
 
-export class CustomPage {
+export default class CustomPage {
   readonly page: Page;
 
   constructor(page: Page) {
@@ -24,5 +24,3 @@ export class CustomPage {
     expect(button).not.toBeNull();
   }
 }
-
-export type CustomPageClass = typeof CustomPage;

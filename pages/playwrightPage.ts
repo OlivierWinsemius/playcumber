@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
-import { CustomPage } from "./customPage";
+import CustomPage from "./customPage";
 
-export class PlaywrightDevPage extends CustomPage {
+export default class PlaywrightPage extends CustomPage {
   async open() {
     await this.page.goto("https://playwright.dev");
   }

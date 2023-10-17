@@ -1,0 +1,6 @@
+{
+  "default": {
+    "requireModule": ["tsx/cjs"],
+    "require": ["test-launcher.ts", "glue/**/*.ts"]
+  }
+}

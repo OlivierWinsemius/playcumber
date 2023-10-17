@@ -2,26 +2,18 @@
   "name": "playcumber",
   "version": "1.0.0",
   "description": "playwright and cucumber",
-  "main": "index.js",
   "author": "Olivier Winsemius",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@cucumber/cucumber": "^8.0.0-rc.1",
-    "@playwright/test": "^1.16.3",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
+    "@cucumber/cucumber": "10.0.0",
+    "@playwright/test": "1.39.0",
+    "tsx": "3.13.0",
+    "typescript": "5.2.2"
   },
   "scripts": {
     "postinstall": "pnpm exec playwright install",
-    "cucumber": "cucumber-js features",
-    "test:playwright": "npx playwright test",
-    "test:cucumber": "pnpm run cucumber --profile=reporting"
-  },
-  "engines": {
-    "node": "17.0.1"
-  },
-  "dependencies": {
-    "dotenv": "^10.0.0"
+    "test": "cucumber-js",
+    "test:playwright": "npx playwright test"
   }
 }
