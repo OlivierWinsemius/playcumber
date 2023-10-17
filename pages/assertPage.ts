@@ -9,5 +9,5 @@ export default function assertPage<
   targetPage: PageClass
 ): asserts currentWorld is CustomWorld<PageInstance> {
   if (!(currentWorld.page instanceof targetPage))
-    throw new Error(`Page is not instance of ${targetPage.name}`);
+    throw new Error(`You are not on page "${targetPage.name}"`);
 }

@@ -8,7 +8,7 @@ Given("I am on playwright.dev", function () {
   return this.page.open();
 });
 
-Then("I have {int} cucumbers in my belly", function () {
+Then("Title has text {string}", function (text) {
   assertPage(this, PlaywrightPage);
-  return this.page.titleHasText("Playwright");
+  return this.page.titleHasText(text);
 });
