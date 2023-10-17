@@ -3,6 +3,7 @@ import {
   BeforeAll,
   AfterAll,
   After,
+  Status,
   setWorldConstructor,
 } from "@cucumber/cucumber";
 import { chromium, Browser } from "@playwright/test";
@@ -13,7 +14,7 @@ setWorldConstructor(CustomWorld);
 
 let browser: Browser;
 BeforeAll(async function () {
-  browser = await chromium.launch();
+  browser = await chromium.launch({ headless: true });
 });
 
 Before(async function () {
@@ -22,7 +23,12 @@ Before(async function () {
   this.page = new CustomPage(page);
 });
 
-After(async function () {
+After(async function (scenario) {
+  if (scenario.result?.status === Status.FAILED) {
+    const path = `output/test.png`;
+    const buffer = await this.page.page.screenshot({ path, fullPage: true });
+    this.attach(buffer, "image/png");
+  }
   await this.page.close();
 });
 
