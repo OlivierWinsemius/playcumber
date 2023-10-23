@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "ES6",
     "noEmit": true,
-    "moduleResolution": "nodenext"
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]

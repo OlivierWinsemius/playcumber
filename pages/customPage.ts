@@ -1,7 +1,8 @@
-import { Page, expect } from "@playwright/test";
+import { Page } from "@playwright/test";
 
 export default class CustomPage {
-  readonly page: Page;
+  page: Page;
+  url: string;
 
   constructor(page: Page) {
     this.page = page;
@@ -10,17 +11,5 @@ export default class CustomPage {
   async close() {
     await this.page.close();
     await this.page.context().close();
-  }
-
-  async open(url = "/") {
-    await this.page.goto(`http://127.0.0.1${url}`);
-  }
-
-  async buttonExists(text: string) {
-    const button = await this.page.textContent(
-      `//button[contains(., "${text}")]`
-    );
-
-    expect(button).not.toBeNull();
   }
 }

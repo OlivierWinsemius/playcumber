@@ -8,7 +8,7 @@ import {
 } from "@cucumber/cucumber";
 import { chromium, Browser } from "@playwright/test";
 import CustomPage from "./pages/customPage";
-import CustomWorld from "./pages/customWorld";
+import CustomWorld from "./customWorld";
 
 setWorldConstructor(CustomWorld);
 

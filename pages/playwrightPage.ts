@@ -3,7 +3,8 @@ import CustomPage from "./customPage";
 
 export default class PlaywrightPage extends CustomPage {
   async open() {
-    await this.page.goto("https://playwright.dev");
+    this.url = "https://playwright.dev";
+    await this.page.goto(this.url);
   }
 
   async titleHasText(text: string) {

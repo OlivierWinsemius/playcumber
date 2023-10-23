@@ -1,5 +1,5 @@
 import { World, IWorldOptions } from "@cucumber/cucumber";
-import CustomPage from "./customPage";
+import CustomPage from "./pages/customPage";
 
 export default class CustomWorld<
   P extends CustomPage = CustomPage
