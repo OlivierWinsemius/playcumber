@@ -1,5 +1,5 @@
-import CustomPage from "../customPage";
-import CustomWorld from "../../customWorld";
+import CustomPage from "../pages/customPage";
+import CustomWorld from "../customWorld";
 
 export default function isPage<TargetPage extends typeof CustomPage>(
   currentWorld: CustomWorld,

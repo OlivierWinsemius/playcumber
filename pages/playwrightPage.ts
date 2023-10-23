@@ -1,14 +1,16 @@
-import { expect } from "@playwright/test";
 import CustomPage from "./customPage";
+import { PageLocators } from "./locators";
 
-export default class PlaywrightPage extends CustomPage {
+export default class PlaywrightPage
+  extends CustomPage
+  implements PageLocators<["header"]>
+{
   async open() {
     this.url = "https://playwright.dev";
     await this.page.goto(this.url);
   }
 
-  async titleHasText(text: string) {
-    const title = this.page.locator(".navbar__inner .navbar__title");
-    await expect(title).toHaveText(text);
+  get header() {
+    return this.page.locator(".navbar__inner .navbar__title");
   }
 }
