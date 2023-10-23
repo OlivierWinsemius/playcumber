@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "noEmit": true
+    "noEmit": true,
+    "moduleResolution": "nodenext"
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
