@@ -1,6 +1,5 @@
 Feature: Playwright test
 
   Scenario: Works
-    Given I am on playwright.dev
+    Given I open playwright.dev
     Then Title has text "Playwright"
-
