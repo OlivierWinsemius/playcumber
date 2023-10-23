@@ -5,7 +5,7 @@ import { defineParameterType } from "@cucumber/cucumber";
 
 defineParameterType({
   name: "locator",
-  regexp: /page|header|footer|sidebar/,
+  regexp: /page|header|footer|sidebar|modal/,
   transformer: (l) => l,
 });
 

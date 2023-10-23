@@ -17,18 +17,19 @@ BeforeAll(async function () {
   browser = await chromium.launch({ headless: true });
 });
 
-Before(async function () {
+Before<CustomWorld>(async function () {
   const context = await browser.newContext();
   const page = await context.newPage();
   this.page = new CustomPage(page);
 });
 
-After(async function (scenario) {
-  if (scenario.result?.status === Status.FAILED) {
+After<CustomWorld>(async function (scenario) {
+  if (this.parameters.report && scenario.result?.status === Status.FAILED) {
     const path = `output/test.png`;
     const buffer = await this.page.page.screenshot({ path, fullPage: true });
     this.attach(buffer, "image/png");
   }
+
   await this.page.close();
 });
 

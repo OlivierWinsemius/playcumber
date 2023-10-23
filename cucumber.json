@@ -7,6 +7,7 @@
   "report": {
     "requireModule": ["ts-node/register"],
     "require": ["test-launcher.ts", "glue/**/*.ts"],
-    "format": ["progress-bar", ["html", "./output/report.html"]]
+    "format": ["progress-bar", ["html", "./output/report.html"]],
+    "worldParameters": { "report": true }
   }
 }
