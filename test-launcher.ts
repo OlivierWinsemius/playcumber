@@ -13,6 +13,7 @@ import CustomWorld from "./customWorld";
 setWorldConstructor(CustomWorld);
 
 let browser: Browser;
+
 BeforeAll(async function () {
   browser = await chromium.launch({ headless: true });
 });

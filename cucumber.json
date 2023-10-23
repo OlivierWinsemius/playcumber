@@ -1,12 +1,12 @@
 {
   "default": {
     "requireModule": ["ts-node/register"],
-    "require": ["test-launcher.ts", "glue/**/*.ts"],
+    "require": ["test-launcher.ts", "step-definitions/**/*.ts"],
     "format": ["progress-bar"]
   },
   "report": {
     "requireModule": ["ts-node/register"],
-    "require": ["test-launcher.ts", "glue/**/*.ts"],
+    "require": ["test-launcher.ts", "step-definitions/**/*.ts"],
     "format": ["progress-bar", ["html", "./output/report.html"]],
     "worldParameters": { "report": true }
   }

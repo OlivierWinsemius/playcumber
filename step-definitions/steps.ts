@@ -4,7 +4,7 @@ import {
   Then as OriginalThen,
 } from "@cucumber/cucumber";
 
-import CustomWorld from "./customWorld";
+import CustomWorld from "../customWorld";
 
 export const Given = OriginalGiven<CustomWorld>;
 export const When = OriginalWhen<CustomWorld>;

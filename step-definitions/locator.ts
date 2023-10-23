@@ -1,13 +1,6 @@
 import { expect } from "@playwright/test";
-import { Then, When } from "../steps";
+import { Then, When } from "./steps";
 import pageHasLocator from "../assertions/pageHasLocator";
-import { defineParameterType } from "@cucumber/cucumber";
-
-defineParameterType({
-  name: "locator",
-  regexp: /page|header|footer|sidebar|modal/,
-  transformer: (l) => l,
-});
 
 When(
   "I click {locator} button with text {string}",
