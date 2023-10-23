@@ -17,6 +17,11 @@ export default function pageHasLocator<Locators extends string[]>(
   }
 
   if (missingLocators.length > 0) {
-    throw new Error(`Page is missing locators: "${missingLocators.join()}"`);
+    const pageName = currentWorld.page.constructor.name;
+    if (missingLocators.length > 1) {
+      const locators = missingLocators.join();
+      throw new Error(`${pageName} is missing locators "${locators}"`);
+    }
+    throw new Error(`${pageName} is missing locator "${missingLocators[0]}"`);
   }
 }
