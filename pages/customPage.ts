@@ -8,8 +8,16 @@ export default class CustomPage {
     this.page = page;
   }
 
+  async open() {
+    await this.page.goto(this.url);
+  }
+
   async close() {
     await this.page.close();
     await this.page.context().close();
+  }
+
+  async waitForUrl() {
+    return this.page.waitForURL(this.url);
   }
 }

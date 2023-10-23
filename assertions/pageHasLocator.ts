@@ -1,9 +1,8 @@
 import CustomPage from "../pages/customPage";
 import CustomWorld from "../customWorld";
 import { Locator } from "@playwright/test";
-import { LocatorName } from "../pages/locators";
 
-export default function pageHasLocator<Locators extends LocatorName[]>(
+export default function pageHasLocator<Locators extends string[]>(
   currentWorld: CustomWorld,
   ...locators: Locators
 ): asserts currentWorld is CustomWorld<
