@@ -32,3 +32,25 @@ Then(
     await expect(this.page[locator].getByText(text)).toBeVisible();
   }
 );
+
+Then(
+  "{locator} has link with text {string}",
+  async function (locator: string, text: string) {
+    pageHasLocator(this, locator);
+
+    await expect(
+      this.page[locator].getByRole("link", { name: text })
+    ).toBeVisible();
+  }
+);
+
+Then(
+  "{locator} has button with text {string}",
+  async function (locator: string, text: string) {
+    pageHasLocator(this, locator);
+
+    await expect(
+      this.page[locator].getByRole("button", { name: text })
+    ).toBeVisible();
+  }
+);

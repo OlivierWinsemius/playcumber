@@ -1,6 +1,6 @@
 {
   "default": {
-    "requireModule": ["tsx/cjs"],
+    "requireModule": ["ts-node/register"],
     "require": ["test-launcher.ts", "glue/**/*.ts"],
     "format": ["progress-bar"]
   },
