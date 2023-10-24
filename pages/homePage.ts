@@ -1,7 +1,8 @@
+import { env } from "../env";
 import CustomPage from "./customPage";
 
-export default class PlaywrightPage extends CustomPage {
-  url = "https://playwright.dev";
+export default class HomePage extends CustomPage {
+  url = env.BASE_URL;
 
   get header() {
     return this.page.locator("nav.navbar");

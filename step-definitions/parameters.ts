@@ -1,11 +1,11 @@
 import { defineParameterType } from "@cucumber/cucumber";
-import PlaywrightPage from "../pages/playwrightPage";
-import PlaywrightDocsPage from "../pages/playwrightDocsPage";
+import HomePage from "../pages/homePage";
+import DocsPage from "../pages/docsPage";
 import { Locator } from "@playwright/test";
 
 const pages = {
-  home: PlaywrightPage,
-  docs: PlaywrightDocsPage,
+  home: HomePage,
+  docs: DocsPage,
 } as const;
 
 type Pages = typeof pages;

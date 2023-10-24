@@ -9,13 +9,14 @@ import {
 import { chromium, Browser } from "@playwright/test";
 import CustomPage from "./pages/customPage";
 import CustomWorld from "./customWorld";
+import { env } from "./env";
 
 setWorldConstructor(CustomWorld);
 
 let browser: Browser;
 
 BeforeAll(async function () {
-  browser = await chromium.launch({ headless: true });
+  browser = await chromium.launch({ headless: env.HEADLESS });
 });
 
 Before<CustomWorld>(async function () {
