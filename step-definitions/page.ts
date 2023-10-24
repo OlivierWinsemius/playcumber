@@ -8,7 +8,7 @@ When("I open the {page} page", async function (page: Pages[keyof Pages]) {
 });
 
 When(
-  "I navigate to the {page} page",
+  "I am redirected to the {page} page",
   async function (page: Pages[keyof Pages]) {
     setPage(this, page);
     await this.page.waitForUrl();

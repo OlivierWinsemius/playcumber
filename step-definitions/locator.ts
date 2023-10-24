@@ -19,7 +19,7 @@ When(
 );
 
 Then(
-  "{locator} has text {string}",
+  "I see {locator} has text {string}",
   async function (locator: string, text: string) {
     pageHasLocator(this, locator);
     await expect(this.page[locator].getByText(text)).toBeVisible();
@@ -27,7 +27,7 @@ Then(
 );
 
 Then(
-  "{locator} has link with text {string}",
+  "I see {locator} has link with text {string}",
   async function (locator: string, text: string) {
     pageHasLocator(this, locator);
 
@@ -38,7 +38,7 @@ Then(
 );
 
 Then(
-  "{locator} has button with text {string}",
+  "I see {locator} has button with text {string}",
   async function (locator: string, text: string) {
     pageHasLocator(this, locator);
 
