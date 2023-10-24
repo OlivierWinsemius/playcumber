@@ -8,14 +8,15 @@ const pages = {
   docs: PlaywrightDocsPage,
 } as const;
 
-export type Pages = typeof pages;
-
+type Pages = typeof pages;
+export type Page = Pages[keyof Pages];
 defineParameterType({
   name: "page",
   regexp: /home|docs/,
   transformer: (p) => pages[p],
 });
 
+export type Section = "page" | "header" | "footer" | "sidebar" | "modal";
 defineParameterType({
   name: "section",
   regexp: /page|header|footer|sidebar|modal/,
